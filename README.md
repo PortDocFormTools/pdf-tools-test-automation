@@ -15,7 +15,7 @@ python -m venv .venv
 ```
 Activate venv
 ```
-venv\Scripts\activate
+.venv\Scripts\activate
 ```
 Then install required libraries via pip install
 ```
