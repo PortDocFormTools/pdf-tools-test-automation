@@ -4,3 +4,5 @@ PLAYWRIGHT_OPTIONS = {
     "browser_type": "chromium",
     "viewport": {"width": 1920, "height": 1080}
 }
+
+BASE_URL = ""
