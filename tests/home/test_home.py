@@ -4,9 +4,9 @@ from pages.home_page import HomePage
 from fixtures.home_page_fixture import home_page_data
 
 
+@allure.parent_suite("PDF Tools")
 @allure.suite("HOME")
-@allure.id("TC-HOME-1")
-@allure.feature("Home Page")
+@allure.id("1")
 @allure.tag("smoke")
 def test_home_verify_page_contents(page: Page, home_page_data):
     # Precondition

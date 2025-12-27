@@ -3,6 +3,7 @@ from playwright.sync_api import Page
 from pages.home_page import HomePage
 
 
+@allure.parent_suite("Allure Verification")
 @allure.suite("ALLURE")
 @allure.feature("Allure Reporting")
 def test_allure_verify_screenshot_on_fail(page: Page):
