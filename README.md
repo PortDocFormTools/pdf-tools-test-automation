@@ -58,7 +58,7 @@ pytest path/file.py
 # Allure report
 **Generate Allure results**
 ```
-pytest --alluredir=allure-results
+pytest --alluredir=allure-results --clean-alluredir
 ```
 **Serve a temporary report (no files saved)**
 ```
