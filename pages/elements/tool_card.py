@@ -1,4 +1,3 @@
-
 import allure
 from pages.elements.base_element import BaseElement
 
@@ -6,6 +5,7 @@ from pages.elements.base_element import BaseElement
 class ToolCard:
     def __init__(self, page, tool_name: str):
         self._page = page
+        self._tool_name = tool_name.lower()
         self._card = BaseElement.from_test_id(self._page, f"card-{tool_name}")
         self._title = self._card.child("h3")
         self._open_button = self._card.child("a")
@@ -22,3 +22,14 @@ class ToolCard:
     def open(self):
         with allure.step(f"Click Open button on {self.title()} tool card"):
             self._open_button.click()
+
+        if self._tool_name == "compress":
+            from pages.compress_page import CompressPage
+            page_class = CompressPage
+        elif self._tool_name == "merge":
+            from pages.merge_page import MergePage
+            page_class = MergePage
+        else:
+            raise ValueError(f"No page mapping for {self._tool_name}")
+
+        return page_class(self._page)
