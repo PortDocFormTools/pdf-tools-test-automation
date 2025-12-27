@@ -23,13 +23,14 @@ class ToolCard:
         with allure.step(f"Click Open button on {self.title()} tool card"):
             self._open_button.click()
 
-        if self._tool_name == "compress":
-            from pages.compress_page import CompressPage
-            page_class = CompressPage
-        elif self._tool_name == "merge":
-            from pages.merge_page import MergePage
-            page_class = MergePage
-        else:
+        page_mapping = {
+            "compress": lambda: __import__("pages.compress_page", fromlist=["CompressPage"]).CompressPage,
+            "merge": lambda: __import__("pages.merge_page", fromlist=["MergePage"]).MergePage,
+            "split": lambda: __import__("pages.split_page", fromlist=["SplitPage"]).SplitPage
+        }
+
+        if self._tool_name not in page_mapping:
             raise ValueError(f"No page mapping for {self._tool_name}")
 
+        page_class = page_mapping[self._tool_name]()
         return page_class(self._page)
