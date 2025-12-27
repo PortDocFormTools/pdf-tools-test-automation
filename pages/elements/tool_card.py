@@ -1,4 +1,5 @@
 
+import allure
 from pages.elements.base_element import BaseElement
 
 
@@ -12,11 +13,12 @@ class ToolCard:
     def is_visible(self) -> bool:
         return self._card.is_visible()
 
-    def get_title(self) -> str:
+    def title(self) -> str:
         return self._title.text()
 
     def open_is_clickable(self) -> bool:
         return self._open_button.is_visible() and self._open_button.is_enabled()
 
+    @allure.step("Click Open button on {tool_name} tool card")
     def open(self):
         self._open_button.click()

@@ -6,7 +6,7 @@ from pages.elements.tool_card import ToolCard
 
 class HomePage(BasePage):
     def __init__(self, page: Page):
-        super().__init__(page)
+        super().__init__(page, "Home page")
         self._page = page
         self._header = BaseElement(page, "header")
         self._description = BaseElement.from_test_id(page, "page-subtitle")
@@ -17,8 +17,8 @@ class HomePage(BasePage):
     def is_opened(self) -> bool:
         return self._header.is_visible()
 
-    def get_header_text(self) -> str:
+    def header_text(self) -> str:
         return self._header.text()
 
-    def get_description_text(self) -> str:
+    def description_text(self) -> str:
         return self._description.text()
