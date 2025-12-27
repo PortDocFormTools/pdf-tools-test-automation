@@ -11,9 +11,8 @@ from pages.compress_page import CompressPage
 def test_compress_verify_page_contents(page: Page):
     # Precondition
     home_page = HomePage(page)
-    compress_page = CompressPage(page)
     home_page.navigate()
-    home_page.compress_tool_card.open()
+    compress_page =home_page.compress_tool_card.open()
 
     # Step 1
     with allure.step("Verify that Compress Page is opened"):
