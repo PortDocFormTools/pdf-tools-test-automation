@@ -1,5 +1,4 @@
 import config
-import allure
 from playwright.sync_api import Page
 from pages.base_pdf_page import BasePDFPage
 from pages.elements.base_element import BaseElement

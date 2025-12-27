@@ -1,8 +1,8 @@
+import config
 import pytest
 import allure
 from playwright.sync_api import sync_playwright
 from allure_commons.types import AttachmentType
-import config
 
 
 @pytest.hookimpl(hookwrapper=True)
