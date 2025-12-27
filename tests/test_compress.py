@@ -1,7 +1,6 @@
 import allure
 from playwright.sync_api import Page
 from pages.home_page import HomePage
-from pages.compress_page import CompressPage
 
 
 @allure.parent_suite("PDF Tools")
