@@ -21,6 +21,10 @@ python -m venv .venv
 ```
 pip install -r requirements.txt
 ```
+**Install playwright dependencies**
+```
+playwright install
+```
 **Create config.py based on config.py.example**
 ```
 cp config.py.example config.py
@@ -42,11 +46,29 @@ Then Copy Server URL from console after ```npm start```
 BASE_URL = "copied URL"
 ```
 
-**To run all tests use**
+**Run all tests**
 ```
 pytest
 ```
-**Run a specific test file or suite**
+**Run specific test file or suite**
 ```
 pytest path/file.py
+```
+
+# Allure report
+**Generate Allure results**
+```
+pytest --alluredir=allure-results
+```
+**Serve a temporary report (no files saved)**
+```
+allure serve allure-results    
+```
+**Generate Allure report**
+```
+allure generate allure-results -o allure-report --clean
+```
+**Open Allure report**
+```
+allure open allure-report
 ```

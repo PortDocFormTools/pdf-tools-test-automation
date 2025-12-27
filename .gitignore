@@ -216,3 +216,7 @@ __marimo__/
 
 # Config.py
 config.py
+
+# Allure
+allure-results/
+allure-report/
