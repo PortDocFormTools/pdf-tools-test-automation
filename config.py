@@ -6,3 +6,6 @@ PLAYWRIGHT_OPTIONS = {
 }
 
 BASE_URL = ""
+COMPRESS_URL = f"{BASE_URL}/pages/compress.html"
+MERGE_URL = f"{BASE_URL}/pages/merge.html"
+SPLIT_URL = f"{BASE_URL}/pages/split.html"
