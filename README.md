@@ -21,6 +21,10 @@ python -m venv .venv
 ```
 pip install -r requirements.txt
 ```
+**Create config.py based on config.py.example**
+```
+cp config.py.example config.py
+```
 
 # Workflow
 Make sure to activate the venv every time you work on the project. This will ensure that the correct dependencies are used and avoid issues related to mismatched packages.
