@@ -50,5 +50,8 @@ class BaseElement:
     def is_enabled(self) -> bool:
         return self.locator.is_enabled()
 
+    def is_clickable(self) -> bool:
+        return self.is_visible() and self.is_enabled()
+
     def upload_file(self, file_path: str):
         self.locator.set_input_files(file_path)
