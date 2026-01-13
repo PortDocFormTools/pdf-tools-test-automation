@@ -11,7 +11,7 @@ def test_compress_verify_page_contents(page: Page):
     # Precondition
     home_page = HomePage(page)
     home_page.navigate()
-    compress_page =home_page.compress_tool_card.open()
+    compress_page = home_page.compress_tool_card.open()
 
     # Step 1
     with allure.step("Verify that Compress Page is opened"):
