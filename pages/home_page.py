@@ -17,8 +17,5 @@ class HomePage(BasePage):
     def is_opened(self) -> bool:
         return self._header.is_visible()
 
-    def header_text(self) -> str:
-        return self._header.text()
-
     def description_text(self) -> str:
         return self._description.text()
