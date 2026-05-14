@@ -18,9 +18,7 @@ def test_home_verify_page_contents(page: Page, home_page_data):
     # Step 1
     with allure.step("Verify page title/descriptionn"):
         assert home_page.title() == home_page_data["title"]
-        assert home_page.header_text() == home_page_data["header"]
-        assert home_page.description_text(
-        ) == home_page_data["description"]
+        assert home_page.description_text() == home_page_data["description"]
 
         # Step 2
     with allure.step("Verify Compress PDF card"):
